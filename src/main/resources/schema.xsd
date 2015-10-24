@@ -1,0 +1,29 @@
+<xsd:schema xmlns:tns="http://jaxb.conrad.com/"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tst="http://jaxb.conrad.com/"
+            version="1.0" targetNamespace="http://jaxb.conrad.com/">
+
+    <xsd:complexType name="decimal">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:decimal" />
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:element name="parent">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="APR" minOccurs="0" nillable="true">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:restriction base="tst:decimal">
+                                <xsd:totalDigits value="13" />
+                                <xsd:fractionDigits value="9" />
+                            </xsd:restriction>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
